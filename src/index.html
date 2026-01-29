@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Игровой портал</title>
+  <script type="module" crossorigin src="../assets/index.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill.js">
+  <link rel="stylesheet" crossorigin href="../assets/index.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>GamePortal</h1>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Игры</a></li>
+        <li><a href="#">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h2>Добро пожаловать на GamePortal!</h2>
+      <p>Лучшие игры, обзоры и сообщество игроков.</p>
+    </section>
+
+    <section class="filters">
+      <h3>Фильтр по жанрам</h3>
+      <div class="genre-buttons">
+        <button data-genre="action">Экшен</button>
+        <button data-genre="puzzle">Головоломки</button>
+        <button data-genre="rpg">RPG</button>
+        <button data-genre="strategy">Стратегии</button>
+        <button data-genre="arcade">Аркады</button>
+        <button data-genre="all">Все</button>
+      </div>
+    </section>
+
+    <section class="games">
+      <h3>Популярные игры</h3>
+      <div class="slider" id="gamesSlider">
+        <div class="slider-track">
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmOGY4ZjgiIHJ4PSI4Ii8+DQogICAgDQogICAgPCEtLSDQodC40LvRg9GN0YIg0LvQuNGB0Ysg0LjQtyDRgtCw0L3Qs9GA0LDQvNCwIC0tPg0KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwMCwgNTApIHNjYWxlKDEuNSkiPg0KICAgICAgICA8cG9seWdvbiBwb2ludHM9IjAsMCA1MCwwIDAsNTAiIGZpbGw9IiMyRjRGMkYiIG9wYWNpdHk9IjAuNyIvPg0KICAgICAgICA8cG9seWdvbiBwb2ludHM9IjAsMCAwLDUwIDUwLDAiIGZpbGw9IiM1NTZCMkYiIG9wYWNpdHk9IjAuNyIvPg0KICAgICAgICA8cG9seWdvbiBwb2ludHM9IjAsMCAzNSwwIDAsMzUiIGZpbGw9IiM2QjhFMjMiIG9wYWNpdHk9IjAuNyIvPg0KICAgICAgICA8cG9seWdvbiBwb2ludHM9IjAsMCAyNSwwIDAsMjUiIGZpbGw9IiM5QUNEMzIiIG9wYWNpdHk9IjAuNyIvPg0KICAgICAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiM4QTlBNUIiIG9wYWNpdHk9IjAuNyIvPg0KICAgIDwvZz4NCiAgICANCiAgICA8dGV4dCB4PSIyMDAiIHk9IjEyMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iYm9sZCIgDQogICAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJGNEYyRiI+DQogICAgICAgINCi0JDQndCT0KDQkNCcDQogICAgPC90ZXh0Pg0KPC9zdmc+" alt="Танграм">
+              <div class="content">
+                <h4>Танграм</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/tangram/tangram.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../assets/tagGame.jpeg" alt="Пятнашки">
+              <div class="content">
+                <h4>Пятнашки</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/tagGame/mainMenu.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="rpg">
+              <img src="../assets/RetroGame.jpeg" alt="RetroGame">
+              <div class="content">
+                <h4>RetroGame</h4>
+                <p>RPG, фэнтези, 2024</p>
+                <a href="./games/retroGame/retroGame.html" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="../assets/%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D0%BA%D0%B8%20%D0%B8%20%D0%BD%D0%BE%D0%BB%D0%B8%D0%BA%D0%B8.jpg" alt="Крестики и нолики">
+              <div class="content">
+                <h4>Крестики и нолики</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/Tic-tac-toe/Tic-tac-toe.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../assets/memory.jpg" alt="Игра на запоминание">
+              <div class="content">
+                <h4>Memory</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/memory/HomePage.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="rpg">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="action">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="action">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Игра 1">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="action">
+              <img src="../assets/%D0%97%D0%BD%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <button type="button" class="slider-prev" aria-label="Предыдущий слайд">❮</button>
+        <button type="button" class="slider-next" aria-label="Следующий слайд">❯</button>
+        <div class="slider-pagination" aria-label="Числовая пагинация"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo">
+        <h3>GamePortal</h3>
+      </div>
+      <div class="contacts">
+        <p>Email: info@gameportal.ru</p>
+        <p>Телефон: +9 (999) 99-99-99</p>
+      </div>
+      <div class="social">
+        <a href="#"><img src="../assets/V.svg.png" alt="VK"></a>
+        <a href="#"><img src="../assets/telegram.webp" alt="Telegram"></a>
+        <a href="#"><img src="../assets/youtube.webp" alt="YouTube"></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 - 2026 GamePortal. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
