@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MomeryPlay</title>
+    <link rel="stylesheet" crossorigin href="../../../assets/PlayPage.css">
+    <link rel="stylesheet" crossorigin href="../../../assets/rest.css">
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <p class="title">Momery</p>
+        <div class="conteiner-timer" id="timer"></div>
+        <div class="stop"></div>
+      </div>
+    </header>
+    
+    <div class="conteiner">
+      <div class="conteiner-field">
+        <div class="grid" id="card-container"></div>
+      </div>
+    </div>
+
+    <div class="modal-background">
+      <div class="modal-menu">
+        <div class="modal-menu-stop">
+          <div class="btn_menu modal-menu-resume"></div>
+          <div class="btn_menu modal-menu-exit"></div>
+        </div>
+
+        <div class="modal-menu-failed">
+          <p class="title-moodle">Вы проиграли!</p>
+          <div class="btn_menu modal-menu-remove"></div>
+          <div class="btn_menu modal-menu-exit"></div>
+        </div>
+      </div>
+    </div>
+    <script src="app/app_play_page.js"></script>
+  </body>
+</html>
