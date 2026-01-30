@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Крестики-нолики</title>
+    <title>Крестики-нолики</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
   <script type="module" crossorigin src="../../../assets/ticTacToe.js"></script>
   <link rel="modulepreload" crossorigin href="../../../assets/modulepreload-polyfill.js">
   <link rel="stylesheet" crossorigin href="../../../assets/ticTacToe.css">
@@ -21,6 +22,65 @@
 </div>
 <div class="panel">
     <button class="reset">С начала</button>
+</div>
+
+<script src="./js/logic.js" type="module"></script>
+<script src="./js/ui.js" type="module"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Крестики‑нолики</title>
+</head>
+<body>
+
+<!-- Главное меню -->
+<div id="main-menu" class="menu">
+    <h1>Крестики‑нолики</h1>
+    <button id="start-game-btn">Начать игру</button>
+    <button id="exit-btn">Выход</button>
+</div>
+
+<!-- Панель настроек -->
+<div id="settings-panel" class="panel hidden">
+    <h2>Настройки игры</h2>
+    <form id="game-settings-form">
+        <label>
+            Размер поля (3–11):
+            <input type="number" id="board-size" min="3" max="11" value="3" required>
+        </label>
+        <label>
+            Первый игрок:
+            <select id="first-player">
+                <option value="0">X (Игрок 1)</option>
+                <option value="1">O (Игрок 2)</option>
+            </select>
+        </label>
+        <button type="submit">Запустить игру</button>
+        <button type="button" id="back-to-menu">Назад в меню</button>
+    </form>
+</div>
+
+<!-- Игровое поле -->
+<div id="board" class="hidden"></div>
+
+<!-- Модальное окно победы -->
+<div id="modal" class="hidden">
+    <div id="modal__window">
+        <h2></h2>
+        <div id="modal__buttons">
+            <button class="reset">Играть ещё</button>
+        </div>
+    </div>
+</div>
+
+<!-- Панель управления во время игры -->
+<div id="game-controls" class="panel hidden">
+    <button class="reset">С начала</button>
+    <button id="to-menu">В меню</button>
 </div>
 
 </body>
