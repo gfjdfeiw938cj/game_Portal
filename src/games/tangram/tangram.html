@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Танграм</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css">
+</head>
+<body>
+    <a href="../../index.html" class="menu-item">Назад в меню</a>
+    <div class="container">
+        <header class="game-header">
+            <h1>Танграм</h1>
+            <button id="mode-toggle" class="mode-toggle-btn">Режим создания</button>
+        </header>
+        
+        <main class="game-main">
+            <div class="game-wrapper">
+                <!-- отрисовка поля размером 500х500 пикселей, 200х200 логических единиц -->
+                <svg id="game-board" viewBox="0 0 200 200" width="500" height="500"></svg>
+            </div>
+            <!-- элементы режима игры  -->
+            <div class="game-mode-elements">
+                <!-- выбор фигуры для сборки -->
+                <div class="shape-selector">
+                    <h3>Выберите фигуру:</h3>
+                    <div class="shape-buttons">
+                        <button class="shape-btn" data-shape="square">Квадрат</button>
+                        <button class="shape-btn" data-shape="fox">Лиса</button>
+                    </div>
+                </div>
+                
+                <div class="game-instructions">
+                    <h3>Инструкция:</h3>
+                    <ul>
+                        <li>Нужно собрать заданную фигуру</li>
+                        <li>Детали можно перемещать с помощью мыши</li>
+                        <li>Зажмите левый клик для захвата детали</li>
+                        <li>Правый клик поворачивает деталь на 45 градусов</li>
+                    </ul>
+                    <div class="game-controls">
+                        <button id="reset-btn" class="control-btn">Сбросить фигуры</button>
+                        <button id="check-btn" class="control-btn">Проверить решение</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+<script src="./js/tangram-pieces.js" type="module"></script> <!-- создает фигуры на поле -->
+<script src="./js/tangram.js" type="module"></script> <!-- логика перестановки -->
+<script src="./js/hint.js" type="module"></script> <!-- подсказка для игрока -->
+<script src="./js/solution-checker.js" type="module"></script> <!-- проверка решения -->
+<script src="./js/mode-manager.js" type="module"></script> <!-- переключения режима игры-создания -->
+<script src="./js/debug-tools.js" type="module"></script> <!-- инструмент создания фигур -->
+
+</body>
+</html>

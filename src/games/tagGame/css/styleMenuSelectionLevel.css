@@ -1,0 +1,253 @@
+                                    /* Меню выбора размера карты  */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  transition: opacity 0.5s ease-out; /* opacity видимость */
+}
+
+.menu-container.menu-hidden {
+  display: none;
+  opacity: 0;
+}
+
+.panel-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px 40px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  width: 50%;
+}
+
+.game-title {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+                                    /* Кнопки главного меню */
+.game-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-btn {
+  padding: 15px 30px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #764ba2;
+  transform: translateY(-2px);
+}
+
+.menu-btn:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+                                        /* Меню уровней */
+.level-menu {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.level-btn {
+  padding: 14px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.level-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.level-btn:active {
+  transform: translateY(0);
+}
+                                   /* Кнопка ссылка Назад в меню */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px;
+  color: #f44336;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+  border-radius: 8px;
+}
+
+.back-link:hover {
+  color: #d32f2f; /* Более тёмный оттенок красного */
+  transform: scale(1.05); /* Лёгкое увеличение при наведении */
+  background-color: #ffecee;
+}
+
+.back-link img:hover {
+  opacity: 0.9;
+  filter: brightness(90%);
+}
+
+.back-link:hover {
+  color: #d32f2f;
+  text-decoration: underline;
+}
+                                   
+.back-btn {
+  background-color: #f44336 !important;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background-color: #d32f2f !important;
+}                      
+                                    /*   Меню для определения размера карты   */
+#myForm {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 500px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Заголовок */
+.text1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Контейнер для группы полей */
+.container-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+/* Общие стили для меток с flex-разметкой */
+.labelClass1,
+.labelClass2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.length-Matrix-text {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex: 2 1 0; /* 2 части ширины */
+}
+
+.panel-Matrix {
+  padding: 12px 16px;
+  border: 2px solid #e1e5ee;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  flex: 1 1 0; /* 1 часть ширины */
+  max-width: none;
+  text-align: center;
+  width: 100%;
+}
+
+.panel-Matrix:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.panel-Matrix::placeholder {
+  color: #aaa;
+}
+
+/* Кнопка */
+#Panel {
+  text-align: center;
+}
+
+.buttonSubmit {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.buttonSubmit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.buttonSubmit:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .menu-container {
+    padding: 30px 40px;
+  }
+
+  .game-title {
+    font-size: 2rem;
+  }
+
+  .menu-btn,
+  .level-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}

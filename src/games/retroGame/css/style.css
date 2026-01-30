@@ -1,0 +1,584 @@
+/* === ГЛОБАЛЬНЫЕ СТИЛИ === */
+
+:root {
+  --cell-size: 64px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  font-size: 16px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* === БАЗОВЫЕ КОМПОНЕНТЫ === */
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  background-color: #f8f9fa;
+  text-align: center;
+  vertical-align: middle;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  background-color: #c1c7cc;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.controls {
+  text-align: center;
+  margin: 50px 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* === ИГРОВОЕ ПОЛЕ === */
+
+.board-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+}
+
+.cell {
+  position: relative;
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+.cell.selected::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 4px solid transparent;
+  border-radius: 32px;
+  box-sizing: border-box;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.cell.selected-yellow::before {
+  border-color: #ff0;
+  border-style: solid;
+}
+
+.cell.selected-green::before {
+  border-color: #0f0;
+  border-style: dashed;
+}
+
+.cell.selected-red::before {
+  border-color: #f00;
+  border-style: dashed;
+}
+
+/* === СТИЛИ КАРТ (БИОМОВ) === */
+
+.board.prairie {
+  --map-tile-top-left-url: url('../img/prairie/map-tile-top-left.png');
+  --map-tile-top-url: url('../img/prairie/map-tile-top.png');
+  --map-tile-top-right-url: url('../img/prairie/map-tile-top-right.png');
+  --map-tile-bottom-left-url: url('../img/prairie/map-tile-bottom-left.png');
+  --map-tile-bottom-url: url('../img/prairie/map-tile-bottom.png');
+  --map-tile-bottom-right-url: url('../img/prairie/map-tile-bottom-right.png');
+  --map-tile-left-url: url('../img/prairie/map-tile-left.png');
+  --map-tile-right-url: url('../img/prairie/map-tile-right.png');
+  --map-tile-center-url: url('../img/prairie/map-tile-center.png');
+}
+
+.board.desert {
+  --map-tile-top-left-url: url('../img/desert/map-tile-top-left.png');
+  --map-tile-top-url: url('../img/desert/map-tile-top.png');
+  --map-tile-top-right-url: url('../img/desert/map-tile-top-right.png');
+  --map-tile-bottom-left-url: url('../img/desert/map-tile-bottom-left.png');
+  --map-tile-bottom-url: url('../img/desert/map-tile-bottom.png');
+  --map-tile-bottom-right-url: url('../img/desert/map-tile-bottom-right.png');
+  --map-tile-left-url: url('../img/desert/map-tile-left.png');
+  --map-tile-right-url: url('../img/desert/map-tile-right.png');
+  --map-tile-center-url: url('../img/desert/map-tile-center.png');
+}
+
+.board.arctic {
+  --map-tile-top-left-url: url('../img/arctic/map-tile-top-left.png');
+  --map-tile-top-url: url('../img/arctic/map-tile-top.png');
+  --map-tile-top-right-url: url('../img/arctic/map-tile-top-right.png');
+  --map-tile-bottom-left-url: url('../img/arctic/map-tile-bottom-left.png');
+  --map-tile-bottom-url: url('../img/arctic/map-tile-bottom.png');
+  --map-tile-bottom-right-url: url('../img/arctic/map-tile-bottom-right.png');
+  --map-tile-left-url: url('../img/arctic/map-tile-left.png');
+  --map-tile-right-url: url('../img/arctic/map-tile-right.png');
+  --map-tile-center-url: url('../img/arctic/map-tile-center.png');
+}
+
+.board.mountain {
+  --map-tile-top-left-url: url('../img/mountain/map-tile-top-left.png');
+  --map-tile-top-url: url('../img/mountain/map-tile-top.png');
+  --map-tile-top-right-url: url('../img/mountain/map-tile-top-right.png');
+  --map-tile-bottom-left-url: url('../img/mountain/map-tile-bottom-left.png');
+  --map-tile-bottom-url: url('../img/mountain/map-tile-bottom.png');
+  --map-tile-bottom-right-url: url('../img/mountain/map-tile-bottom-right.png');
+  --map-tile-left-url: url('../img/mountain/map-tile-left.png');
+  --map-tile-right-url: url('../img/mountain/map-tile-right.png');
+  --map-tile-center-url: url('../img/mountain/map-tile-center.png');
+}
+
+.map-tile {
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+.map-tile-top-left {
+  background: var(--map-tile-top-left-url) center/cover;
+}
+
+.map-tile-top {
+  background: var(--map-tile-top-url) center/cover;
+}
+
+.map-tile-top-right {
+  background: var(--map-tile-top-right-url) center/cover;
+}
+
+.map-tile-bottom-left {
+  background: var(--map-tile-bottom-left-url) center/cover;
+}
+
+.map-tile-bottom {
+  background: var(--map-tile-bottom-url) center/cover;
+}
+
+.map-tile-bottom-right {
+  background: var(--map-tile-bottom-right-url) center/cover;
+}
+
+.map-tile-left {
+  background: var(--map-tile-left-url) center/cover;
+}
+
+.map-tile-right {
+  background: var(--map-tile-right-url) center/cover;
+}
+
+.map-tile-center {
+  background: var(--map-tile-center-url) center/cover;
+}
+
+/* === ПЕРСОНАЖИ === */
+
+.character {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  position: absolute;
+  z-index: 99;
+  background-size: cover;
+  background-position: center;
+}
+
+.character.generic {
+  background-image: url('../img/characters/generic.png');
+}
+
+.character.bowman {
+  background-image: url('../img/characters/bowman.png');
+}
+
+.character.daemon {
+  background-image: url('../img/characters/daemon.png');
+}
+
+.character.magician {
+  background-image: url('../img/characters/magician.png');
+}
+
+.character.swordsman {
+  background-image: url('../img/characters/swordsman.png');
+}
+
+.character.undead {
+  background-image: url('../img/characters/undead.png');
+}
+
+.character.vampire {
+  background-image: url('../img/characters/vampire.png');
+}
+
+.character.zombie {
+  background-image: url('../img/characters/zombie.png');
+}
+
+/* === ИНДИКАТОРЫ ЗДОРОВЬЯ === */
+
+.health-level {
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 50px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.health-level-indicator {
+  height: 100%;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.health-level-indicator-high {
+  background: #0f0;
+}
+
+.health-level-indicator-normal {
+  background: #ff0;
+}
+
+.health-level-indicator-critical {
+  background: #f00;
+}
+
+/* === ЭФФЕКТЫ УРОНА === */
+
+.damage {
+  position: absolute;
+  width: var(--cell-size);
+  text-align: center;
+  z-index: 999;
+  color: #f00;
+  font-weight: bold;
+  font-size: 1rem;
+  animation: fade 500ms ease-out;
+  pointer-events: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    top: calc(var(--cell-size) * 0.5);
+    font-size: 1rem;
+  }
+  to {
+    opacity: 1;
+    top: -20px;
+    font-size: 1.5rem;
+  }
+}
+
+/* === POPUP‑ОКНА === */
+
+.popup {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.popup__window {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 150px;
+  text-align: center;
+  border-radius: 14px;
+  padding: 0 18px;
+  background-color: white;
+  box-shadow: 0px 0px 8px 5px rgba(34, 60, 80, 0.2);
+  position: relative;
+}
+
+.popup__title {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #333;
+}
+
+.popup__button {
+  border: none;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.popup__button:hover {
+  background-color: rgb(32, 112, 192);
+}
+
+.popup_hidden {
+  display: none !important;
+}
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+
+@media (max-width: 768px) {
+   :root {
+    --cell-size: 48px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .controls {
+    margin: 20px 0;
+  }
+
+  /* Ключевое изменение: фиксируем минимум 4 колонки */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, var(--cell-size)); /* Жёстко фиксируем 8 колонок */
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    
+    /* Центрируем поле при нехватке места */
+    margin: 0 auto;
+    
+    /* Ограничиваем максимальную ширину */
+    max-width: calc(8 * var(--cell-size) + 7 * 2px);
+  }  
+
+  .cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: relative;
+  }
+
+  .cell::before {
+    width: calc(var(--cell-size) - 4px);
+    height: calc(var(--cell-size) - 4px);
+    border-radius: calc(var(--cell-size) / 2);
+  }
+
+  .health-level {
+    top: 1px;
+    left: 5px;
+    width: 30px;
+    height: 3px;
+  }
+
+  .health-level-indicator {
+    height: 3px;
+  }
+
+  .damage {
+    font-size: 0.9rem;
+    top: calc(var(--cell-size) * 0.4);
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      top: calc(var(--cell-size) * 0.4);
+      font-size: 0.9rem;
+    }
+    to {
+      opacity: 1;
+      top: -15px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cell-size: 36px;
+  }
+
+  .board {
+    max-width: calc(8 * 36px + 7 * 2px); /* Пересчитываем max-width */
+  }
+
+  .btn {
+    padding: .25rem .5rem;
+    font-size: .85rem;
+  }
+
+  .popup__window {
+    min-width: 90%;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .popup__title {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .popup__button {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ ОПТИМИЗАЦИИ === */
+
+/* Убираем лишние отступы у body на мобильных */
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+}
+
+/* Оптимизация для портретного режима */
+@media (orientation: portrait) and (max-width: 576px) {
+  .board-container {
+    padding: 0 5px;
+  }
+
+  .controls {
+    padding: 0 10px;
+  }
+}
+
+/* Оптимизация для ландшафтного режима на мобильных */
+@media (orientation: landscape) and (max-height: 576px) {
+  .board-container {
+    max-height: calc(100vh - 120px); /* Ограничиваем высоту, оставляя место для управления */
+    overflow-y: auto;
+  }
+
+  .controls {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+}
+
+/* Улучшение читаемости на маленьких экранах */
+@media (max-width: 360px) {
+  .popup__title {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .popup__button {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .damage {
+    font-size: 0.8rem;
+  }
+}
+
+/* Адаптация элементов управления */
+@media (max-width: 480px) {
+  .btn {
+    min-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Уменьшаем отступы внутри кнопок */
+  .btn:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+/* Оптимизация производительности на слабых устройствах */
+@media (any-hover: none) {
+  /* Убираем анимации на устройствах без hover */
+  .btn:hover {
+    background-color: #f8f9fa;
+  }
+
+  .btn:active,
+  .btn:focus {
+    transform: none;
+  }
+
+  .damage {
+    animation: none;
+  }
+}
+
+/* Финальные штрихи для доступности */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Высококонтрастные темы */
+@media (forced-colors: active) {
+  .health-level-indicator-high {
+    background: lime;
+  }
+  
+  .health-level-indicator-critical {
+    background: red;
+  }
+
+  .popup__button {
+    forced-color-adjust: none;
+    background-color: ButtonFace;
+    color: ButtonText;
+  }
+}

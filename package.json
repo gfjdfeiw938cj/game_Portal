@@ -1,0 +1,24 @@
+{
+  "name": "rut",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://gfjdfeiw938cj.github.io/game_Portal",
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -r https://github.com/gfjdfeiw938cj/game_Portal",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "npm:rolldown-vite@7.2.5"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.2.5"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  height: 100vh;
+  background-image: url("../img/fon.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  height: 25%;
+}
+
+h1 {
+  color: white;
+  font-size: 5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 10px 1px 2px #a64a00;
+  margin-top: 2%;
+  font-family: 'Roboto Condensed';
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-button {
+  width: 25vw;
+  height: 18vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-bottom: 6%;
+}
+
+.menu-button:hover {
+  transform: translateY(-2px);
+}
+
+.menu-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.menu-button-play {
+  background-image: url("../img/btn-home-page-play.png");
+}
+
+.menu-button-exit {
+  background-image: url("../img/btn-home-page-exit.png");
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+}

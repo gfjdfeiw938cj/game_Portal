@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/styleMenuSelectionLevel.css">
+  <link rel="stylesheet" href="../css/stylesTagGame.css">
+  <link rel="stylesheet" href="../css/stylesPause.css">
+</head>
+<body>
+  <div class="icon-Menu">
+    <a href="../mainMenu.html" class="back-link">
+      <img src="../assets/img/menu-navigation-grid.svg" alt="Описание" width="100" height="100">
+    </a>
+  </div>
+  <div class="menu-container">
+    <div class="panel-container">
+      <h1 class="game-title">Выберите уровень</h1>
+      <div class="level-menu">
+        <button type="button" class="level-btn">Карта 3x3</button>
+        <button type="button" class="level-btn">Карта 4x4</button>
+        <button type="button" class="level-btn">Карта 5x4</button>
+        <button type="button" class="level-btn">Карта 5x5</button>
+        <button type="button" class="level-btn custom-map-btm">Свой размер карты</button>
+        <a href="../mainMenu.html" class="back-link">Назад в меню</a>
+      </div>
+    </div>
+  </div>
+  <div class="div-container">
+    <div class="container-blink-none">
+      <p class="blink-playingGame">Идёт воспроизведение записи игры!</p>
+    </div>
+    <div class="container-сountdown-progress">
+      <div class="couter-Game"></div>
+      <div class="time-display" id="display">00:00</div>
+    </div>
+    <div class="container"></div>
+    <div class="panel">
+      <div class="arrow-diag left"></div>
+      <button id="reset-New" class="reset">Играть заново</button>
+      <button class="pause-btn">&#10074;&#10074;</button>
+      <button id="reset-New-Map" class="reset">Новая карта</button>
+      <div class="arrow-diag right"></div>
+    </div>
+  </div>
+  <div id="modal" class="hidden">
+    <div id="modal-window">
+      <div class="victory-title"></div>
+      <div id="modal-buttons"></div>
+    </div>
+  </div>
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/core/pause.js"></script>
+</body>
+</html>

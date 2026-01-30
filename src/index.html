@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Игровой портал</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>GamePortal</h1>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Игры</a></li>
+        <li><a href="#">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h2>Добро пожаловать на GamePortal!</h2>
+      <p>Лучшие игры, обзоры и сообщество игроков.</p>
+    </section>
+
+    <section class="filters">
+      <h3>Фильтр по жанрам</h3>
+      <div class="genre-buttons">
+        <button data-genre="action">Экшен</button>
+        <button data-genre="puzzle">Головоломки</button>
+        <button data-genre="rpg">RPG</button>
+        <button data-genre="strategy">Стратегии</button>
+        <button data-genre="arcade">Аркады</button>
+        <button data-genre="all">Все</button>
+      </div>
+    </section>
+
+    <section class="games">
+      <h3>Популярные игры</h3>
+      <div class="slider" id="gamesSlider">
+        <div class="slider-track">
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/tangram.svg" alt="Танграм">
+              <div class="content">
+                <h4>Танграм</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/tangram/tangram.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/tagGame.jpeg" alt="Пятнашки">
+              <div class="content">
+                <h4>Пятнашки</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/tagGame/mainMenu.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="rpg">
+              <img src="../public/RetroGame.jpeg" alt="RetroGame">
+              <div class="content">
+                <h4>RetroGame</h4>
+                <p>RPG, фэнтези, 2024</p>
+                <a href="./games/retroGame/retroGame.html" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/Крестики и нолики.jpg" alt="Крестики и нолики">
+              <div class="content">
+                <h4>Крестики и нолики</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/Tic-tac-toe/Tic-tac-toe.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/memory.jpg" alt="Игра на запоминание">
+              <div class="content">
+                <h4>Memory</h4>
+                <p>Логика, головоломки, 2026</p>
+                <a href="./games/memory/HomePage.html" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="rpg">
+              <img src="../public/Знак вопроса.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="action">
+              <img src="../public/Знак вопроса.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/Знак вопроса.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+          <div class="slide">
+            <article class="game-card" data-genre="puzzle">
+              <img src="../public/Знак вопроса.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="action">
+              <img src="../public/Знак вопроса.jpg" alt="Игра 1">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+            <article class="game-card" data-genre="action">
+              <img src="../public/Знак вопроса.jpg" alt="Возможная игра на будущее">
+              <div class="content">
+                <h4>Игра на будущее</h4>
+                <p>???, ???, 2026</p>
+                <a href="" class="btn">Играть</a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <button type="button" class="slider-prev" aria-label="Предыдущий слайд">❮</button>
+        <button type="button" class="slider-next" aria-label="Следующий слайд">❯</button>
+        <div class="slider-pagination" aria-label="Числовая пагинация"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="logo">
+        <h3>GamePortal</h3>
+      </div>
+      <div class="contacts">
+        <p>Email: info@gameportal.ru</p>
+        <p>Телефон: +9 (999) 99-99-99</p>
+      </div>
+      <div class="social">
+        <a href="#"><img src="../public/V.svg.png" alt="VK"></a>
+        <a href="#"><img src="../public/telegram.webp" alt="Telegram"></a>
+        <a href="#"><img src="../public/youtube.webp" alt="YouTube"></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 - 2026 GamePortal. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
+

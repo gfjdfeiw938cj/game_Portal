@@ -1,0 +1,40 @@
+.pause-btn {
+  color: chartreuse;
+  font-size: 40px;
+  width: 40px;
+  height: 80px;
+  border: 8px solid  #667eea;
+  border-radius: 50%;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.pause-btn.pause-btn-colorRed {
+  color: rgb(255, 0, 0);
+}
+
+.pause-btn:hover {
+  background-color:  #667eea;
+}
+
+.pause-btn::before,
+.pause-btn::after {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background-color: #667eea;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.pause-btn:hover::before,
+.pause-btn:hover::after {
+  background-color: white;
+}

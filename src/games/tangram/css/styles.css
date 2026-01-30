@@ -1,0 +1,249 @@
+/* основные  */
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* центрирующий контейнер  */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* шапка игры  */
+.game-header {
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.game-header h1 {
+    color: #2F4F2F;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* основная область: поле и инструкция */
+.game-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.game-wrapper {
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* игровое поле SVG */
+#game-board {
+    border: none;
+    border-radius: 8px;
+    margin: 0;
+    display: block;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* стили фигур  */
+.tangram-piece {
+    cursor: grab;
+    transition: filter 0.2s ease;
+    user-select: none;   /* защита от контекстного меню и выделения объекта */
+    -webkit-user-select: none; /* для safari */
+}
+
+.tangram-piece:hover {
+    filter: brightness(1.05);     /* осветление при наведении */
+}
+
+.tangram-piece.dragging {
+    cursor: grabbing;   /* грэб и прозрачность при перетаскивании */
+    opacity: 0.9;
+}
+
+/* панель инструкций */
+.game-instructions {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.game-instructions h3 {
+    color: #2F4F2F;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.game-instructions ul {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0;
+    color: #555;
+}
+
+.game-instructions li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* подвал */
+.game-footer {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.game-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* минимальная адаптивность для мобилок */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    
+    .game-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    #game-board {
+        width: 95vw;
+        height: 95vw;
+        max-width: 400px;
+        max-height: 400px;
+    }
+    
+    .game-instructions {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+/* общие типы кнопок управления */
+.game-controls {
+    margin-top: 15px;
+}
+
+.control-btn {
+    padding: 8px 16px;
+    background-color: #4a6fa5;
+    color: white;
+    border: 1px solid #385d8a;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.control-btn:hover {
+    background-color: #385d8a;
+}
+
+ /* проверка показала, что фигуру разместили правильно */
+.tangram-piece.correct {
+    stroke: #4CAF50;
+    stroke-width: 2px;
+}
+/* поп-ап с результатами проверки головоломки */
+#check-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 10001;
+    font-size: 14px;
+}
+
+#check-message.info {
+    background: #2F4F2F;
+}
+/* панель выбора фигуры */
+.shape-selector {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.shape-selector h3 {
+    margin-bottom: 10px;
+    color: #2F4F2F;
+    font-size: 1.1rem;
+}
+
+.shape-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.shape-btn {
+    padding: 8px 15px;
+    background-color: #4a6fa5;
+    color: white;
+    border: 1px solid #385d8a;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.shape-btn:hover {
+    background-color: #385d8a;
+}
+
+.shape-btn.active {
+    background-color: #9ACD32;
+    border-color: #7CB029;
+}
+/* кнопка смены режима игры-создания */
+.mode-toggle-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4a6fa5;
+    color: white;
+    border: 1px solid #385d8a;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.mode-toggle-btn:hover {
+    background-color: #385d8a;
+}
+/* класс для сокрытия элементов */
+.hidden {
+    display: none !important;
+}
