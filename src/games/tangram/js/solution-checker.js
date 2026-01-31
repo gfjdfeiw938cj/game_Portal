@@ -1,3 +1,4 @@
+//                                 solution-checker.js — проверка решения;
 import {getCurrentHint} from './hint'
 
 // жесткость критериев проверки решения 

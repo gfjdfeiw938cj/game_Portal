@@ -1,3 +1,5 @@
+// tangram.js — логика перемещения/поворота;
+
 import {setCurrentShape, showHint } from './hint'
 import {getCurrentMode} from './mode-manager'
 

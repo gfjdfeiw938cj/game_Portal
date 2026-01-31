@@ -1,3 +1,4 @@
+// debug-tools.js — инструменты отладки.
 let overlay = null; // SVG-группа для отладки (сетка)
 let debugContainer = null; // Контейнер с инструментами создания фигур
 

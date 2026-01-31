@@ -1,3 +1,4 @@
+// mode-manager.js — переключение режимов;
 import {hideHint} from './hint'
 import {initDebugTools} from './debug-tools'
 

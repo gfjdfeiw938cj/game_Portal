@@ -1,3 +1,4 @@
+//                                        tangram-pieces.js — создание фигур
 // вспомогательная функция для создания svg-элементов 
 function createSvgElement(tagName, attributes = {}) {
     const element = document.createElementNS('http://www.w3.org/2000/svg', tagName);
